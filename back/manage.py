@@ -33,13 +33,13 @@ rooms = [
 ]
 
 rooms_data = [
-    (1, '', '', ''),
-    (2, '', '', ''),
-    (3, '', '', ''),
-    (4, '', '', ''),
-    (5, '', '', ''),
-    (6, '', '', ''),
-    (7, '', '', ''),
+    (1, '', '', '/static/room1.png'),
+    (2, '', '', '/static/room2.png'),
+    (3, '', '', '/static/room3.png'),
+    (4, '', '', '/static/room4.png'),
+    (5, '', '', '/static/room5.png'),
+    (6, '', '', '/static/room6.png'),
+    (7, '', '', '/static/room7.png'),
 ]
 
 query_add_rooms = '''
