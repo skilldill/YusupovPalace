@@ -3,7 +3,7 @@ import sqlite3
 conn = sqlite3.connect('data.db')
 cursor = conn.cursor()
 
-query_create_table_users = '''
+query_create_table_rooms = '''
     CREATE TABLE rooms (
         id INTEGER PRIMARY KEY
         ,name VARCHAR(200) NOT NULL
@@ -11,7 +11,7 @@ query_create_table_users = '''
 '''
 
 
-query_create_table_users_data = '''
+query_create_table_rooms_data = '''
     CREATE TABLE rooms_data (
         id INTEGER PRIMARY KEY
         ,room_id INTEGER NOT NULL
@@ -32,7 +32,7 @@ rooms = [
     ('Танцевальный зал',),
 ]
 
-users_data = [
+rooms_data = [
     (1, '', '', ''),
     (2, '', '', ''),
     (3, '', '', ''),
@@ -53,6 +53,9 @@ query_add_rooms_data = '''
     VALUES
     (?, ?, ?, ?)
 '''
+
+cursor.execute(query_create_table_rooms)
+cursor.execute(query_create_table_rooms_data)
 
 cursor.executemany(
     query_add_rooms,
