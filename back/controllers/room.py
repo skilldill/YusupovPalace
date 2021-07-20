@@ -1,9 +1,9 @@
 from flask_restful import Resource
-from utils import get_cursor
+from utils import get_cursor, map_room
 class Room(Resource):
     def get(self, room_id):
         query = '''
-            SELECT room_id, description, audio, photo
+            SELECT room_id, name, description, audio, photo
             FROM rooms_data
             WHERE room_id = (?)
         '''
@@ -12,4 +12,4 @@ class Room(Resource):
         cursor.execute(query, (room_id,))
         room_data = cursor.fetchone()
 
-        return room_data
+        return map_room(room_data)

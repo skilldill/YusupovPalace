@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from utils import get_cursor
+from utils import get_cursor, map_rooms
 
 class RoomsList(Resource):
     def get(self):
@@ -12,4 +12,4 @@ class RoomsList(Resource):
 
         rooms = cursor.fetchall()
 
-        return rooms
+        return map_rooms(rooms)
