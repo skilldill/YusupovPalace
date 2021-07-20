@@ -7,6 +7,7 @@ query_create_table_rooms = '''
     CREATE TABLE rooms (
         id INTEGER PRIMARY KEY
         ,name VARCHAR(200) NOT NULL
+        ,preview VARCHAR(300) NOT NULL
     )
 '''
 
@@ -24,13 +25,13 @@ query_create_table_rooms_data = '''
 
 
 rooms = [
-    ('Гобеленовая гостиная',),
-    ('Спальня княгини',),
-    ('Большая ротонда',),
-    ('Синяя гостиная',),
-    ('Красная гостиная',),
-    ('Зелёная гостиная',),
-    ('Танцевальный зал',),
+    ('Гобеленовая гостиная', '/static/room1.png'),
+    ('Спальня княгини', '/static/room2.png'),
+    ('Большая ротонда', '/static/room3.png'),
+    ('Синяя гостиная', '/static/room4.png'),
+    ('Красная гостиная', '/static/room5.png'),
+    ('Зелёная гостиная', '/static/room6.png'),
+    ('Танцевальный зал', '/static/room7.png'),
 ]
 
 rooms_data = [
@@ -45,7 +46,9 @@ rooms_data = [
 
 query_add_rooms = '''
     INSERT INTO rooms
-    (name) VALUES (?)
+    (name, preview) 
+    VALUES 
+    (?, ?)
 '''
 
 query_add_rooms_data = '''

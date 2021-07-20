@@ -20,6 +20,10 @@ def map_rooms(rooms):
     maped_rooms = []
 
     for room in rooms:
-        maped_rooms.append({"id": room[0], "name": room[1]})
+        maped_rooms.append({
+            "id": room[0], 
+            "name": room[1],
+            "preview": room[2]
+        })
 
     return maped_rooms
